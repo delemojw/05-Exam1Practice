@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 1.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jabari-Aman Delemore.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -24,7 +24,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 #    STOP working on that problem and ASK YOUR INSTRUCTOR FOR HELP
 #    on it, in class or via Piazza.
 ########################################################################
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -92,7 +92,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -120,6 +120,19 @@ def run_test_problem1a():
     print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
+    # Test 3:
+    expected = 0  # This is APPROXIMATELY the correct answer.
+    answer = problem1a(1, 1)
+    print()
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 1.28   # This is APPROXIMATELY the correct answer.
+    answer = problem1a(5, 9)
+    print()
+    print('Test 4 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
@@ -152,7 +165,12 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
-
+    add = 0
+    shuri = (n - m) + 1
+    for k in range(shuri):
+        if math.sin(m) <= math.sin(n):
+            add = add + math.sin(k)
+    return add
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
