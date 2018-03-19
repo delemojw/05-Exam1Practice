@@ -37,7 +37,7 @@ def main():
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # ------------------------------------------------------------------
@@ -85,7 +85,7 @@ def run_test_problem3a():
 
     # Window 3:
     title = 'Problem 3a. Test 4: Start at (30, 30), 20 lines'
-    window3 = rg.RoseWindow(450, 300, title)
+    window3 = rg.RoseWindow(600, 500, title)
 
     # Test 4 (it is on window 3):
     point = rg.Point(30, 30)
@@ -97,6 +97,34 @@ def run_test_problem3a():
 
     window3.close_on_mouse_click()
 
+    # Window 4:
+    title = 'Problem 3a. Test 5: Start at (10, 10), 15 lines'
+    window4 = rg.RoseWindow(600, 600, title)
+
+
+    # Test 5 (it is on window 4):
+    point = rg.Point(10, 10)
+    expected = 153
+    answer = problem3a(window4, point, 15)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    window4.close_on_mouse_click()
+
+    # Window 5:
+    title = 'Problem 3a. Test 5: Start at (15, 10), 5 lines'
+    window5 = rg.RoseWindow(600, 600, title)
+
+    # Test 5 (it is on window 4):
+    point = rg.Point(15, 10)
+    expected = 25
+    answer = problem3a(window5, point, 5)
+    print()
+    print('Test 6 expected:', expected)
+    print('       actual:  ', answer)
+
+    window4.close_on_mouse_click()
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment (or integrated with one of the above tests,
@@ -136,6 +164,31 @@ def problem3a(window, point, n):
         :type point:  rg.Point
         :type n:      int
     """
+    point2 = rg.Point(point.x, point.y)
+    x = point.x
+    y = point.y
+    u = point2.x
+    z = point2.y
+    count = 0
+    for k in range(n):
+        point = rg.Point(x, y)
+        x = point.x + (k+20)
+        y = point.y + (k + 10)
+        point2 = rg.Point(u, z)
+        u = point.x + (k + 20)
+        z = point.y + (50 + k)
+        line = rg.Line(point, point2)
+        line.attach_to(window)
+        value = (k * 2) + 1
+        line.thickness = value
+        if line.thickness >= 13:
+            line.thickness = 13
+        count = count + line.thickness
+        window.render()
+    return count
+
+    window.continue_on_mouse_click()
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
