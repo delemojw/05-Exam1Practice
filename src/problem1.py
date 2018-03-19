@@ -188,7 +188,33 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+# Test 1:
+    expected = 5   # This is APPROXIMATELY the correct answer.
+    answer = problem1b(3, 5)
+    print()
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
+    # Test 2:
+    expected = 44  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(5, 40)
+    print()
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 1  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(2, 1)
+    print()
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 5   # This is APPROXIMATELY the correct answer.
+    answer = problem1b(3, 5)
+    print()
+    print('Test 4 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 def problem1b(m, f):
     """
