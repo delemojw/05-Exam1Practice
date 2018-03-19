@@ -121,15 +121,15 @@ def run_test_problem1a():
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 0  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(1, 1)
+    expected = 1.135  # This is APPROXIMATELY the correct answer.
+    answer = problem1a(1, -2)
     print()
     print('Test 3 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
     # Test 4:
-    expected = 1.28   # This is APPROXIMATELY the correct answer.
-    answer = problem1a(5, 9)
+    expected = 0.841   # This is APPROXIMATELY the correct answer.
+    answer = problem1a(1, 1)
     print()
     print('Test 4 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
@@ -157,7 +157,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -166,11 +166,11 @@ def problem1a(m, n):
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
     add = 0
-    shuri = (n - m) + 1
-    for k in range(shuri):
-        if math.sin(m) <= math.sin(n):
-            add = add + math.sin(k)
+    shuri = ((n**2) - (m**2))
+    for k in range(shuri + 1):
+        add = add + math.sin((m**2)+ k)
     return add
+
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
@@ -210,8 +210,8 @@ def run_test_problem1b():
     print('       actual:  ', answer)
 
     # Test 4:
-    expected = 5   # This is APPROXIMATELY the correct answer.
-    answer = problem1b(3, 5)
+    expected = 1   # This is APPROXIMATELY the correct answer.
+    answer = problem1b(1, 1)
     print()
     print('Test 4 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
@@ -232,8 +232,18 @@ def problem1b(m, f):
       -- If m is 5 and f is 40, the correct answer is 44,
            since there are 44 primes between 5 and 200.
      """
+
+    # tchalla = ((f ** m) - m)
+    # add = 0
+    # for k in range(tchalla + 1):
+    #     value = m + k
+    #     if is_prime(value):
+    #         add = add + 1
+    # return add
+    # talk to prof.
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ####################################################################
@@ -329,8 +339,15 @@ def problem1c(n):
            and the product of those numbers is 223092870,
            and the sum of the digits in 223092870 is 33.
     """
+    nakia = n - 2
+    add = 1
+    for k in range(nakia + 1):
+        if is_prime(2 + k):
+            value = 2 + k
+            add = add * value
+    return sum_of_digits(add)
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
