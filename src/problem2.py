@@ -184,10 +184,24 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
-
+    rect.attach_to(win)
+    win.render()
+    win.continue_on_mouse_click()
+    center = rect.get_center()
+    p1 = rect.get_lower_left_corner()
+    p2 = rect.get_upper_right_corner()
+    for k in range(n):
+        rectangle = rg.Rectangle(p1, p2)
+        p1.x = p1.x - delta
+        p1.y = p1.y + delta
+        p2.x = p2.x + delta
+        p2.y = p2.y - delta
+        rectangle.attach_to(win)
+        win.render()
+    win.continue_on_mouse_click()
 
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
